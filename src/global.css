@@ -1,0 +1,48 @@
+/* Скидання базових відступів */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+/* Для списків */
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Для посилань */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Для кнопок */
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Для зображень */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Загальні налаштування */
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #212121;
+  background-color: #fff;
+}
