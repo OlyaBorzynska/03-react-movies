@@ -11,8 +11,9 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
 
     if (query === "") {
       toast("No movies found for your request.");
+    } else {
+      onSubmit(query);
     }
-    onSubmit(query);
   };
 
   return (
