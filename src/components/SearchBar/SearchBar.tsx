@@ -1,6 +1,20 @@
 import styles from "./SearchBar.module.css";
+import toast, { Toaster } from "react-hot-toast";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  onSubmit: (query: string) => void;
+}
+
+export default function SearchBar({ onSubmit }: SearchBarProps) {
+  const handleSubmit = async (formData: FormData) => {
+    const query = (formData.get("query") as string).trim();
+
+    if (query === "") {
+      toast("No movies found for your request.");
+    }
+    onSubmit(query);
+  };
+
   return (
     <header className={styles.header}>
       {" "}
@@ -14,7 +28,7 @@ export default function SearchBar() {
         >
           Powered by TMDB{" "}
         </a>{" "}
-        <form className={styles.form}>
+        <form className={styles.form} action={handleSubmit}>
           {" "}
           <input
             className={styles.input}
@@ -29,6 +43,7 @@ export default function SearchBar() {
           </button>{" "}
         </form>{" "}
       </div>
+      <Toaster />
     </header>
   );
 }
